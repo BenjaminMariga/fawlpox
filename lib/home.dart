@@ -8,7 +8,7 @@ import 'upload_image_screen.dart';
 
 class HomePage extends ConsumerWidget {
   final User? user;
-  const HomePage({Key? key, required this.user});
+  const HomePage({super.key, required this.user});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -179,7 +179,7 @@ class HomePage extends ConsumerWidget {
               height: 20,
             ),
             const Text("Press the button below to start the detection process"),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Align(

@@ -5,7 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tflite_v2/tflite_v2.dart';
 
 class ImageClassifier extends StatefulWidget {
-  const ImageClassifier({Key? key}) : super(key: key);
+  const ImageClassifier({super.key});
 
   @override
   State createState() => _ImageClassifierState();
@@ -15,6 +15,7 @@ class _ImageClassifierState extends State<ImageClassifier> {
   final ImagePicker _picker = ImagePicker();
   XFile? _image;
   File? file;
+  // ignore: unused_field
   var _recognitions;
   var results = "";
   // var dataList = [];
@@ -196,22 +197,25 @@ class _ImageClassifierState extends State<ImageClassifier> {
             ),
           ),
         ],
-      ), 
+      ),
       floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FloatingActionButton(
             heroTag: "pickImageFab",
             onPressed: _pickImage,
             tooltip: "Pick Image",
-            child: const Icon(Icons.image),
+            child: const Icon(Icons.image, color: Colors.green),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 50),
           FloatingActionButton(
             heroTag: "captureImageFab",
             onPressed: _captureImage,
             tooltip: "Capture Image",
-            child: const Icon(Icons.camera),
+            child: const Icon(
+              Icons.camera,
+              color: Colors.green,
+            ),
           ),
         ],
       ),
